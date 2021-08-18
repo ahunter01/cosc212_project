@@ -3,15 +3,18 @@
 <html lang="en">
 
     <head>
-        <title>Test</title>
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <title>Points of Interest</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="libraries/leaflet/leaflet.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="libraries/leaflet/leaflet.js"></script>
+        <script src="js/map.js"></script>
     </head>
 
     <body>
 
         <header>
-            <h1>Test</h1> 
+            <h1>Points of Interest</h1> 
     
             <nav>
                 <ul>
@@ -23,12 +26,41 @@
 
         </header>
 
-    <main>
-            <p>Welcome to ?COMPAMY NAME?</p>
-    </main>
+        <main>
+
+            <div id="greeting">
+                <p>On this map we've noted a few parks and walking tracks in the Dunedin area.</p>
+                <p>Perfect for enjoying the time with your dog!</p>
+            </div>
+
+            <div id="map"></div>
+
+            <div id="locations">
+                <ul>
+                    <li>
+                        <h2>Central</h2>
+                        <p>101 The Octagon</p>
+                        <p>(03) 490 1234</p>
+                    </li>
+                    <li>
+                        <h2>South</h2>
+                        <p>789 Princes St</p>
+                        <p>(03) 490 2468</p>
+                    </li>
+                    <li>
+                        <h2>North</h2>
+                        <p>561 Great King St</p>
+                        <p>(03) 490 3579</p>
+                    </li>
+                </ul>
+            </div>
+            
+        
+        </main>
 
     <footer>
         <p>?COMPAMY NAME? is not a real dog rental service. No dogs will be rented, or even exist!</p>
+        <p>This entire website is completely fictitious and created for a COSC212 assignment</p>
         <p>All images from <a href="http://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> and are believed to be in the public domain.</p>
     </footer>
 

@@ -1,13 +1,32 @@
 var Map = (function () {
     "use strict" ;
+
+    var geojsonFeature = {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "campsite",
+        "name": "Car Rental Office"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.5153065919876,
+          -45.90540437585189
+        ]
+      }
+    };
+
     var map;
-    var officeMarker;
+    var officeMarker, markerLocation, markerBounds;
     var secondMarker;
     var pub = {};
 
     pub.setup = function() {
 
-      map = L.map('map').setView([-45.875, 170.500], 13);
+      map = L.map('map').setView([-45.875, 170.500], 14);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       { maxZoom: 18,
@@ -16,9 +35,13 @@ var Map = (function () {
         'OpenStreetMap contributors</a> CC-BY-SA'
             }).addTo(map);
 
-      officeMarker = L.marker([-45.865, 170.500]).addTo(map);
+      officeMarker = L.marker([-45.858545, 170.514191]).addTo(map);
 
-      secondMarker = L.marker([-45.869, 170.500]).addTo(map);
+      markerLocation = [officeMarker.getLatLng()];
+      markerBounds = L.latLngBounds(markerLocation);
+      map.fitBounds(markerBounds);
+
+      L.geoJSON(geojsonFeature).addTo(map);
 
     };
     return pub;
