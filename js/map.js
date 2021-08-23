@@ -1,23 +1,7 @@
 var Map = (function () {
     "use strict" ;
 
-    var geojsonFeature = {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "type": "campsite",
-        "name": "Car Rental Office"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          170.5153065919876,
-          -45.90540437585189
-        ]
-      }
-    };
+    var geojsonFeature = JSON.parse("POI.geoJSON")
 
     var map;
     var officeMarker, markerLocation, markerBounds;
